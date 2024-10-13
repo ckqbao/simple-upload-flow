@@ -2,10 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'ZT Talk';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./assets/fonts/ZTTalk-Regular.otf');
+}
+@font-face {
+  font-family: 'ZT Talk';
+  font-weight: 500;
+  font-style: normal;
+  src: url('./assets/fonts/ZTTalk-Medium.otf');
+}
+@font-face {
+  font-family: 'ZT Talk';
+  font-weight: 600;
+  font-style: normal;
+  src: url('./assets/fonts/ZTTalk-SemiBold.otf');
+}
+@font-face {
+  font-family: 'ZT Talk';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./assets/fonts/ZTTalk-Bold.otf');
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 206 14% 10%;
+    --foreground: 27 100% 96%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
@@ -57,13 +82,29 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground h-full;
+    font-family: 'ZT Talk';
   }
+}
+
+@layer components {
+  .primary-gradient-btn {
+    @apply block bg-primary-gradient cursor-pointer text-lg/6 font-bold uppercase !px-24 !py-6 !rounded-[68px];
+  }
+}
+
+@layer utilities {
+  .bg-primary-gradient {
+    background: linear-gradient(47.97deg, #ff9518 6.44%, #ff5d18 53.71%, #db1d10 97.6%);
+  }
+}
+
+html {
+  height: 100%;
 }
